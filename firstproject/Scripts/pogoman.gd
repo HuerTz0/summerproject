@@ -3,7 +3,7 @@ extends Node2D
 
 # --- NODES ---
 @onready var main_body: RigidBody2D = $MainBody
-@onready var ground_check: RayCast2D = $GroundCheck
+@onready var ground_check: RayCast2D = $Ground
 @onready var pogo_tip: RigidBody2D = $PogoTip
 
 # --- FORCES ---
