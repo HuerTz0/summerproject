@@ -7,3 +7,5 @@
 [node name="TileMap" type="TileMap" parent="." unique_id=873574844]
 tile_set = SubResource("TileSet_fyhcv")
 format = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=100799531]
