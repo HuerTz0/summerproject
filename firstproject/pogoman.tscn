@@ -12,6 +12,7 @@ size = Vector2(14, 25)
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1588633021]
 physics_material_override = SubResource("PhysicsMaterial_7agik")
+angular_damp = 2.0
 script = ExtResource("1_vv2r5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=552345178]
