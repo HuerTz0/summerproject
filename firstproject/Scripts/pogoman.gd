@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	ground_check.global_position = main_body.global_position
 	ground_check.target_position = Vector2.DOWN.rotated(main_body.rotation) * 50 # Adjust length to reach past the tip
 	
-	pogo_tip.rotation = main_body.rotation
+	pogo_tip.global_rotation = main_body.global_rotation
 	
 	_handle_rotation()
 	_handle_jumping(delta)

@@ -33,7 +33,7 @@ position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_kml6t")
 
 [node name="PogoTip" type="RigidBody2D" parent="." unique_id=288144450]
-position = Vector2(0, 7)
+position = Vector2(0, 5)
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_tn5ig")
 lock_rotation = true
@@ -47,13 +47,12 @@ texture = ExtResource("3_ot7jj")
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_pd0o8")
 
-[node name="PogoSpring" type="GrooveJoint2D" parent="." unique_id=1914681752]
-position = Vector2(0, 2)
-scale = Vector2(0.5, 0.5)
+[node name="PogoSpring" type="DampedSpringJoint2D" parent="." unique_id=332010169]
 node_a = NodePath("../MainBody")
 node_b = NodePath("../PogoTip")
 length = 12.0
+stiffness = 64.0
+damping = 0.1
 
 [node name="Ground" type="RayCast2D" parent="." unique_id=670319652]
-position = Vector2(0, 7)
-target_position = Vector2(0, 11)
+target_position = Vector2(0, 13.5)
