@@ -1,26 +1,58 @@
 [gd_scene format=3 uid="uid://cwy7w8lcq34yy"]
 
 [ext_resource type="Texture2D" uid="uid://capqemmn3hb7p" path="res://sprites/pogostickman.png" id="1_k62iy"]
-[ext_resource type="Script" uid="uid://cjbcy7bgwq8tg" path="res://Scripts/pogoman.gd" id="1_vv2r5"]
+[ext_resource type="Script" uid="uid://d4as4wkyi2v8p" path="res://Scripts/pogoman.gd" id="1_vv2r5"]
+[ext_resource type="Texture2D" uid="uid://nrtb2com123q" path="res://sprites/pogostickmanstick.png" id="3_ot7jj"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7agik"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u55pn"]
 friction = 0.4
-bounce = 0.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kml6t"]
-size = Vector2(14, 25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kml6t"]
+radius = 5.0
+height = 24.0
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1588633021]
-physics_material_override = SubResource("PhysicsMaterial_7agik")
-angular_damp = 2.0
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tn5ig"]
+bounce = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd0o8"]
+size = Vector2(2, 9)
+
+[node name="Node2D" type="Node2D" unique_id=1425544359]
 script = ExtResource("1_vv2r5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552345178]
+[node name="MainBody" type="RigidBody2D" parent="." unique_id=294276380]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_u55pn")
+angular_damp = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="MainBody" unique_id=959019079]
 texture = ExtResource("1_k62iy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890145717]
-position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_kml6t")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainBody" unique_id=455672540]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_kml6t")
 
-[node name="pogoTip" type="RayCast2D" parent="." unique_id=526277193]
-target_position = Vector2(0, 10)
+[node name="PogoTip" type="RigidBody2D" parent="." unique_id=288144450]
+position = Vector2(0, 2)
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_tn5ig")
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PogoTip" unique_id=1321436584]
+position = Vector2(0, 2.0000005)
+scale = Vector2(1, 0.625)
+texture = ExtResource("3_ot7jj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PogoTip" unique_id=2067660316]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_pd0o8")
+
+[node name="PogoSpring" type="DampedSpringJoint2D" parent="." unique_id=332010169]
+node_a = NodePath("../MainBody")
+node_b = NodePath("../PogoTip")
+length = 12.0
+stiffness = 64.0
+damping = 0.1
+
+[node name="Ground" type="RayCast2D" parent="." unique_id=670319652]
+target_position = Vector2(0, 13.5)
