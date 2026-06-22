@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bj4ervu7q5hvs" path="res://sprites/world_tileset.png" id="1_xtb1e"]
 [ext_resource type="Script" uid="uid://8wlkie337kdt" path="res://Scripts/label.gd" id="2_dn5c8"]
 [ext_resource type="PackedScene" uid="uid://cwy7w8lcq34yy" path="res://pogoman.tscn" id="3_dn5c8"]
+[ext_resource type="PackedScene" uid="uid://u0v3autf085e" path="res://car.tscn" id="4_5lfti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lfti"]
 texture = ExtResource("1_xtb1e")
@@ -172,5 +173,8 @@ zoom = Vector2(4, 4)
 
 [node name="Node2D" parent="." unique_id=1425544359 instance=ExtResource("3_dn5c8")]
 position = Vector2(0, -23)
+
+[node name="Car" parent="." unique_id=789960972 instance=ExtResource("4_5lfti")]
+position = Vector2(94, -31)
 
 [connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]

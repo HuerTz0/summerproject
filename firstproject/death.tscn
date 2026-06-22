@@ -4,3 +4,7 @@
 
 [node name="Area2D" type="Area2D" unique_id=1846408367]
 script = ExtResource("1_qemge")
+
+[node name="Timer" type="Timer" parent="." unique_id=1308290864]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
