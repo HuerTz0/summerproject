@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://cwy7w8lcq34yy"]
 
+[ext_resource type="Texture2D" uid="uid://capqemmn3hb7p" path="res://sprites/pogostickman.png" id="1_k62iy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kml6t"]
+size = Vector2(14, 25)
+
 [node name="RigidBody2D" type="RigidBody2D" unique_id=2018933065]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552345178]
+texture = ExtResource("1_k62iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890145717]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_kml6t")
