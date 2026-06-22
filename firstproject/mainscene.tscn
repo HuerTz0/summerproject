@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bj4ervu7q5hvs" path="res://sprites/world_tileset.png" id="1_xtb1e"]
 [ext_resource type="Script" uid="uid://8wlkie337kdt" path="res://Scripts/label.gd" id="2_dn5c8"]
+[ext_resource type="PackedScene" uid="uid://cwy7w8lcq34yy" path="res://pogoman.tscn" id="3_dn5c8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lfti"]
 texture = ExtResource("1_xtb1e")
@@ -168,5 +169,8 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=18368447]
 position = Vector2(60, -42)
 zoom = Vector2(4, 4)
+
+[node name="RigidBody2D" parent="." unique_id=1588633021 instance=ExtResource("3_dn5c8")]
+position = Vector2(-1, -14)
 
 [connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]
