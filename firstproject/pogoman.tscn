@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://cwy7w8lcq34yy"]
 
 [ext_resource type="Texture2D" uid="uid://capqemmn3hb7p" path="res://sprites/pogostickman.png" id="1_k62iy"]
+[ext_resource type="Script" uid="uid://cjbcy7bgwq8tg" path="res://Scripts/pogoman.gd" id="1_vv2r5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7agik"]
+friction = 0.4
+bounce = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kml6t"]
 size = Vector2(14, 25)
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=2018933065]
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1588633021]
+physics_material_override = SubResource("PhysicsMaterial_7agik")
+script = ExtResource("1_vv2r5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=552345178]
 texture = ExtResource("1_k62iy")
@@ -13,3 +20,6 @@ texture = ExtResource("1_k62iy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890145717]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_kml6t")
+
+[node name="pogoTip" type="RayCast2D" parent="." unique_id=526277193]
+target_position = Vector2(0, 10)
