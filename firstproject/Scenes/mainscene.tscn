@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bj4ervu7q5hvs" path="res://sprites/world_tileset.png" id="1_xtb1e"]
 [ext_resource type="Script" uid="uid://8wlkie337kdt" path="res://Scripts/label.gd" id="2_dn5c8"]
+[ext_resource type="PackedScene" uid="uid://dao57cbo1jjfl" path="res://Scenes/froag.tscn" id="3_a3v7h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lfti"]
 texture = ExtResource("1_xtb1e")
@@ -165,8 +166,11 @@ script = ExtResource("2_dn5c8")
 wait_time = 5.0
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=18368447]
-position = Vector2(60, -42)
+[node name="froag" parent="." unique_id=415499658 instance=ExtResource("3_a3v7h")]
+position = Vector2(-39, -12)
+
+[node name="Camera2D" type="Camera2D" parent="froag" unique_id=18368447]
+position = Vector2(99, -30)
 zoom = Vector2(4, 4)
 
 [connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]
