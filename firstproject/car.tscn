@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dhi7pkf850c28"]
+
+[ext_resource type="Texture2D" uid="uid://deh53np0s0ofb" path="res://sprites/car.png" id="1_7822p"]
+[ext_resource type="Script" uid="uid://mhpcofdm62lx" path="res://Scripts/car.gd" id="1_uoj53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoj53"]
+atlas = ExtResource("1_7822p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k61xc"]
+atlas = ExtResource("1_7822p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyhcv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoj53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k61xc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyhcv"]
+size = Vector2(13, 2)
+
+[node name="Car" type="CharacterBody2D" unique_id=789960972]
+script = ExtResource("1_uoj53")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1023503730]
+sprite_frames = SubResource("SpriteFrames_fyhcv")
+frame_progress = 0.8846098
+
+[node name="hurtbox" type="CollisionPolygon2D" parent="." unique_id=1694965874]
+polygon = PackedVector2Array(-9, -4, 6, -4, 7, -1, 9, -1, 9, 0, 13, 0, 16, 4, 15, 8, 11, 8, 12, 11, 10, 13, 7, 11, 8, 8, -4, 8, -3, 11, -5, 13, -8, 11, -7, 8, -10, 8, -10, -1, -9, -1)
+
+[node name="hitbox" type="Area2D" parent="." unique_id=861120196]
+
+[node name="hitboxcollision" type="CollisionShape2D" parent="hitbox" unique_id=1434664103]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_fyhcv")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
