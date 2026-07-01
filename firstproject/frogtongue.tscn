@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://r7m8ne05qdir"]
+
+[ext_resource type="Script" uid="uid://bw5fsob3m2p81" path="res://Scripts/frogtongue.gd" id="1_g8h51"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fyhcv"]
+radius = 6.0
+
+[node name="Area2D" type="Area2D" unique_id=431984946]
+script = ExtResource("1_g8h51")
+
+[node name="tonguecollision" type="CollisionShape2D" parent="." unique_id=454758362]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fyhcv")
+debug_color = Color(0.88985264, 0.31864598, 0.19110474, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1260718291]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

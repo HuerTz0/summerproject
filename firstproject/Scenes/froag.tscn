@@ -19,3 +19,4 @@ rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_sx241")
 
 [node name="Area2D" parent="." unique_id=431984946 instance=ExtResource("2_8472j")]
+position = Vector2(25, -8)
