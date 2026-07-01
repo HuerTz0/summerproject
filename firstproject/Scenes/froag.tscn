@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dao57cbo1jjfl"]
 
 [ext_resource type="Texture2D" uid="uid://squecmewqbll" path="res://sprites/froag.png" id="1_4gke4"]
+[ext_resource type="PackedScene" uid="uid://d22igsff2uhwj" path="res://Scenes/frogtongue.tscn" id="2_8472j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sx241"]
 radius = 15.0
@@ -16,3 +17,5 @@ texture = ExtResource("1_4gke4")
 position = Vector2(2, -4)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_sx241")
+
+[node name="Area2D" parent="." unique_id=431984946 instance=ExtResource("2_8472j")]
