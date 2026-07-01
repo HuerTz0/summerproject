@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dao57cbo1jjfl"]
 
 [ext_resource type="Texture2D" uid="uid://squecmewqbll" path="res://sprites/froag.png" id="1_4gke4"]
+[ext_resource type="Script" uid="uid://brhfce20oqk2w" path="res://Scenes/froag.gd" id="1_gtt7t"]
 [ext_resource type="PackedScene" uid="uid://d22igsff2uhwj" path="res://Scenes/frogtongue.tscn" id="2_8472j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sx241"]
@@ -8,15 +9,18 @@ radius = 15.0
 height = 38.027817
 
 [node name="froag" type="CharacterBody2D" unique_id=415499658]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1468310924]
-position = Vector2(1, -4)
-texture = ExtResource("1_4gke4")
+script = ExtResource("1_gtt7t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1511937702]
 position = Vector2(2, -4)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_sx241")
 
-[node name="Area2D" parent="." unique_id=431984946 instance=ExtResource("2_8472j")]
+[node name="Pivot" type="Node2D" parent="." unique_id=1382136674]
+
+[node name="Area2D" parent="Pivot" unique_id=431984946 instance=ExtResource("2_8472j")]
 position = Vector2(25, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=1468310924]
+position = Vector2(1, -4)
+texture = ExtResource("1_4gke4")
