@@ -10,4 +10,4 @@ func _ready() -> void:
 
 
 func _on_timer_timeout() -> void:
-	text = "ShouvDick and Goatmar"
+	text = "ShouvDick, Trueren, and Goatmar"
