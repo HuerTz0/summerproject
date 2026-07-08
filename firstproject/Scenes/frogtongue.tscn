@@ -13,7 +13,6 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_fyhcv")
 
 [node name="Timer" type="Timer" parent="." unique_id=1260718291]
-wait_time = 0.104
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

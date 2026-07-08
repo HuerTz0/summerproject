@@ -8,10 +8,11 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("tongue") and button_pressed == false:
+	if button_pressed == false and Input.is_action_just_pressed("tongue") :
 		tonguecollision.call_deferred("set_disabled", false)
 		button_pressed=true
 		timer.start()
+		
 
 
 func _on_timer_timeout() -> void:
