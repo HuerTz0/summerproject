@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bj4ervu7q5hvs" path="res://sprites/world_tileset.png" id="1_xtb1e"]
 [ext_resource type="Script" uid="uid://8wlkie337kdt" path="res://Scripts/label.gd" id="2_dn5c8"]
 [ext_resource type="PackedScene" uid="uid://dao57cbo1jjfl" path="res://Scenes/froag.tscn" id="3_dn5c8"]
+[ext_resource type="PackedScene" uid="uid://jua1opl70f4t" path="res://Scenes/snail.tscn" id="4_5lfti"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lfti"]
 texture = ExtResource("1_xtb1e")
@@ -167,10 +168,14 @@ layer_1/tile_data = PackedInt32Array(65535, 0, 1, 0, 0, 1, 65532, 0, 1, 131068, 
 layer_2/name = "intang"
 
 [node name="froag" parent="." unique_id=415499658 instance=ExtResource("3_dn5c8")]
+visible = false
 position = Vector2(-36, -13)
 
 [node name="Camera2D" type="Camera2D" parent="froag" unique_id=18368447]
 position = Vector2(96, -29)
 zoom = Vector2(4, 4)
+
+[node name="snail" parent="." unique_id=313010862 instance=ExtResource("4_5lfti")]
+position = Vector2(-52, -8)
 
 [connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]

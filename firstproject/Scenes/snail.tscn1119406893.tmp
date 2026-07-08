@@ -29,7 +29,6 @@ animations = [{
 size = Vector2(26, 13.5)
 
 [node name="snail" type="CharacterBody2D" unique_id=313010862]
-collision_layer = 2
 script = ExtResource("1_qjijy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1621777781]
@@ -37,15 +36,13 @@ sprite_frames = SubResource("SpriteFrames_fyhcv")
 frame_progress = 0.0006547835
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481688112]
-position = Vector2(0, 1)
+position = Vector2(0, 1.25)
 shape = SubResource("RectangleShape2D_fyhcv")
 
 [node name="FloorCast" type="RayCast2D" parent="." unique_id=2045038926]
-position = Vector2(-10, 4)
-target_position = Vector2(0, 12)
+position = Vector2(0, 9)
+target_position = Vector2(0, 16)
 
 [node name="WallCast" type="RayCast2D" parent="." unique_id=434356552]
-position = Vector2(8, 6)
-target_position = Vector2(12, 0)
-
-[node name="Timer" type="Timer" parent="." unique_id=1956954739]
+position = Vector2(14, -3)
+target_position = Vector2(24, 0)
