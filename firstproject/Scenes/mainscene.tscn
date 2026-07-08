@@ -158,6 +158,9 @@ layer_2/name = "intang"
 [node name="snail" parent="." unique_id=313010862 instance=ExtResource("4_3p0ik")]
 position = Vector2(140, -119)
 
+[node name="snail2" parent="." unique_id=1529747369 instance=ExtResource("4_3p0ik")]
+position = Vector2(-171, -153)
+
 [node name="Label" type="Label" parent="." unique_id=592897762]
 offset_left = -37.0
 offset_top = -49.0

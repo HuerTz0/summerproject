@@ -22,7 +22,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Only check raycasts if we are NOT in the middle of a turn
 		if not is_turning:
-			
 			# INSIDE CORNERS
 			if wall_cast.is_colliding():
 				rotation_degrees -= 90
