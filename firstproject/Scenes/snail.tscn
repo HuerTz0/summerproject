@@ -21,8 +21,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_insh8")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 1.0
+"name": &"Walk",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyhcv"]
@@ -34,7 +34,9 @@ script = ExtResource("1_qjijy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1621777781]
 sprite_frames = SubResource("SpriteFrames_fyhcv")
-frame_progress = 0.0006547835
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.7021668
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481688112]
 position = Vector2(0, 1)
